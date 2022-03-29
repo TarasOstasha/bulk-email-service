@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const chalk = require('chalk');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const nodemailer = require("nodemailer");
 
@@ -36,8 +38,8 @@ async function sendMail(mailContent, mailRecipients, callback) {
         port: 465, //587,
         secure: true, //false, // true for 465, false for other ports
         auth: {
-            user: 'tonyjoss1990@gmail.com', //process.env.EMAIL, 
-            pass: 'tonyjoss19901102@' //process.env.PASS 
+            user: process.env.EMAIL, 
+            pass: process.env.PASS 
         }
     }, (err, info) => {
         if (err) {
