@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}
+  #editor
+  br
+  form#recipients
+    .form-group
+      label(for='exampleFormControlTextarea1') Enter Recipients
+      textarea#exampleFormControlTextarea1.form-control(rows='3')
+  .myBtn
+    button.btn.btn-primary#sendBtn(type='button') Send
